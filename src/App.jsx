@@ -31,7 +31,7 @@ function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
-      <BrowserRouter>
+      <BrowserRouter basename="/Portfolio_assignment/">
         <Routes>
           <Route path="/" element={<Layout toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />}>
             <Route index element={<Home />} />
