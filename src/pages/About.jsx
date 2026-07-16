@@ -19,6 +19,13 @@ const Title = styled.h2`
   margin-bottom: 1rem;
 `;
 
+const ShortDescription = styled.h3`
+  font-size: 1.4rem;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+`;
+
 const Content = styled.p`
   font-size: 1.1rem;
   line-height: 1.8;
@@ -32,6 +39,26 @@ const SkillsGrid = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
+`;
+
+const SkillsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const SkillCategory = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const CategoryTitle = styled.h4`
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.primary};
+  margin: 0;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
+  padding-bottom: 0.5rem;
 `;
 
 const SkillBadge = styled.div`
@@ -85,6 +112,7 @@ const About = () => {
     <PageContainer>
       <Section>
         <Title>About Me</Title>
+        <ShortDescription>Full-stack developer building real-world web applications and scalable solutions.</ShortDescription>
         <Content>
           I am a passionate full-stack developer who enjoys building real-world web applications. I work with technologies like Java, JavaScript, React, Node.js, and Python to create scalable and user-friendly products. I am always eager to learn new tools and improve my skills in web development, cloud, and Web3 while creating solutions that solve real problems.
         </Content>
@@ -102,14 +130,31 @@ const About = () => {
 
       <Section>
         <Title>Skills</Title>
-        <SkillsGrid>
-          <SkillBadge>JavaScript</SkillBadge>
-          <SkillBadge>React</SkillBadge>
-          <SkillBadge>Node.js</SkillBadge>
-          <SkillBadge>Python</SkillBadge>
-          <SkillBadge>Java</SkillBadge>
-          <SkillBadge>SQL</SkillBadge>
-        </SkillsGrid>
+        <SkillsContainer>
+          <SkillCategory>
+            <CategoryTitle>Languages</CategoryTitle>
+            <SkillsGrid>
+              <SkillBadge>JavaScript</SkillBadge>
+              <SkillBadge>Python</SkillBadge>
+              <SkillBadge>Java</SkillBadge>
+              <SkillBadge>SQL</SkillBadge>
+            </SkillsGrid>
+          </SkillCategory>
+          <SkillCategory>
+            <CategoryTitle>Frontend</CategoryTitle>
+            <SkillsGrid>
+              <SkillBadge>React</SkillBadge>
+              <SkillBadge>HTML5 & CSS3</SkillBadge>
+            </SkillsGrid>
+          </SkillCategory>
+          <SkillCategory>
+            <CategoryTitle>Backend</CategoryTitle>
+            <SkillsGrid>
+              <SkillBadge>Node.js</SkillBadge>
+              <SkillBadge>Express</SkillBadge>
+            </SkillsGrid>
+          </SkillCategory>
+        </SkillsContainer>
       </Section>
     </PageContainer>
   );

@@ -31,6 +31,42 @@ const LinksContainer = styled.div`
   justify-content: center;
 `;
 
+const EmailCard = styled.div`
+  background-color: ${({ theme }) => theme.cardBackground};
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    border-color: ${({ theme }) => theme.primary};
+  }
+`;
+
+const EmailText = styled.p`
+  font-size: 1.2rem;
+  color: ${({ theme }) => theme.text};
+  margin: 0;
+`;
+
+const EmailAddress = styled.a`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: ${({ theme }) => theme.primary};
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const SocialLink = styled.a`
   display: flex;
   align-items: center;
@@ -62,6 +98,11 @@ const Contact = () => {
         I'm always open to new opportunities, collaborations, and conversations. Feel free to reach out through any of the channels below!
       </Subtitle>
 
+      <EmailCard>
+        <EmailText>Send me an email directly at:</EmailText>
+        <EmailAddress href="mailto:udayhiremath45@gmail.com">udayhiremath45@gmail.com</EmailAddress>
+      </EmailCard>
+
       <LinksContainer>
         <SocialLink href="https://www.linkedin.com/in/uday-hiremath-45ln" target="_blank" rel="noopener noreferrer">
           Linkedin
@@ -73,10 +114,6 @@ const Contact = () => {
 
         <SocialLink href="https://drive.google.com/file/d/1wrbu9GyftdodyKr2KGh2JZOdz0nwggQG/view?usp=sharing" target="_blank" rel="noopener noreferrer">
           Resume
-        </SocialLink>
-
-        <SocialLink href="mailto:udayhiremath45@gmail.com">
-          Mail
         </SocialLink>
       </LinksContainer>
     </PageContainer>
